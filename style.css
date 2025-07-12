@@ -1058,6 +1058,14 @@ main {
         left: 10%;
     }
 
+    .division {
+        height: 900px;
+    }
+
+    .timeline-line {
+        height: 200px;
+    }
+
     .s1-span,
     .s2-span,
     .s3-span,
@@ -1065,6 +1073,16 @@ main {
         width: 450px;
         right: 5%;
         font-size: 14px;
+    }
+
+    .project-bar {
+        position: absolute;
+        bottom: 3%;
+        height: 1150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .project-box {
@@ -1156,7 +1174,7 @@ main {
         position: relative;
         left: unset;
         right: unset;
-        top: unset;
+        top: 30%;
         margin: 20px auto;
     }
 
