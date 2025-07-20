@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Personal Website</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="swiper-bundle.min.css">
     </head>
 
     <body>
@@ -252,83 +253,85 @@
         </div>
 
         <div class="achievements-page" id="achievements">
-            <div class="achievement-bar">
-                <div class="achievement-box">
-                    <div class="achievement-box-header">
-                        <div class="goto" id="go1">
-                            <img
-                                src="/images/arrow_forward_24dp_F37329_FILL0_wght300_GRAD0_opsz24.svg"
-                                alt>
-                        </div>
-                        <div class="achievement-img">
-                            <img src="/images/java completion.png" alt>
-                        </div>
-                    </div>
+            <h1>Achievements</h1>
 
-                    <h3 id="event-name">Issued by: IIT Bombay</h3>
-                    <p id="event-desc">Description: Completed a course covering
-                        Java
-                        fundamentals, OOP concepts.
-                    </p>
+            <div class="card_container">
+                <div class="card">
+                    <div class="card_image">
+                        <img src="./images/java completion.png" alt>
+                    </div>
+                    <div class="card_content">
+                        <h3 class="issuer">Issued by <span>IIT
+                                Bombay</span></h3>
+                        <p>Completed a course covering Java fundamentals,
+                            OOP
+                            concepts.</p>
+                        <a href="#" class="view-button" id="go1">View
+                            Certificate</a>
+                    </div>
                 </div>
 
-                <div class="achievement-box">
-                    <div class="achievement-box-header">
-                        <div class="goto" id="go2">
-                            <img
-                                src="/images/arrow_forward_24dp_F37329_FILL0_wght300_GRAD0_opsz24.svg"
-                                alt>
-                        </div>
-                        <div class="achievement-img">
-                            <img src="/images/hackathon.png" alt>
-                        </div>
+                <div class="card">
+                    <div class="card_image">
+                        <img
+                            src="./images/hackathon.png"
+                            alt>
                     </div>
-
-                    <h3 id="event-name">Issued by: Devantra Community
-                        [unstop]</h3>
-                    <p id="event-desc">Description: Participated in an
-                        individual online hackathon, where I applying my skills
-                        in
-                        problem-solving, creativity, and development.
-                    </p>
+                    <div class="card_content">
+                        <h3 class="issuer">Issued by
+                            <span>Unstop</span></h3>
+                        <p>Participated in an individual online hackathon,
+                            where
+                            I applying my skills in problem-solving,
+                            creativity,
+                            and development.</p>
+                        <a href="#" class="view-button" id="go2">View
+                            Certificate</a>
+                    </div>
                 </div>
-
             </div>
         </div>
 
         <div class="experience-page" id="experience">
             <h1>Experiences</h1>
-            <p>I may not have industry experience yet, but I’ve gained hands-on
+            <p>I may not have industry experience yet, but I’ve gained
+                hands-on
                 knowledge through building mini projects and solving real
-                problems while learning. These projects helped me understand how
+                problems while learning. These projects helped me understand
+                how
                 things work beyond theory. Every small project has added
                 to my practical experience and problem-solving skills.
             </p>
 
-            <div class="exp1">
+            <div class="exp" id="exp1">
                 <h3>DSA Learning Journey</h3>
                 <ul>
-                    <li>Learned Priority Queue via Task Scheduler project</li>
-                    <li>Used HashMap with custom classes in multiple apps</li>
-                    <li>Applied logic in Password Manager and Ticket System</li>
+                    <li>Learned Priority Queue via Task Scheduler
+                        project</li>
+                    <li>Used HashMap with custom classes in multiple
+                        apps</li>
+                    <li>Applied logic in Password Manager and Ticket
+                        System</li>
                     <li>Shifted from just solving problems to building
                         real-use tools</li>
                 </ul>
             </div>
 
-            <div class="exp2">
+            <div class="exp" id="exp2">
                 <h3> To-Do List App</h3>
                 <ul>
-                    <li> Implemented local storage to persist user data in the
+                    <li> Implemented local storage to persist user data in
+                        the
                         browser</li>
-                    <li> Ensured that tasks remain saved even after refreshing
+                    <li> Ensured that tasks remain saved even after
+                        refreshing
                         the page</li>
                     <li>Added functionality for adding and removing tasks
                         dynamically</li>
                 </ul>
             </div>
 
-            <div class="exp3">
+            <div class="exp" id="exp3">
                 <h3>News Website</h3>
                 <ul>
                     <li>Fetched live news data using API calls</li>
@@ -338,7 +341,7 @@
                 </ul>
             </div>
 
-            <div class="exp4">
+            <div class="exp" id="exp4">
                 <h3>Visual Design</h3>
                 <ul>
                     <li>positioning</li>
@@ -390,18 +393,19 @@
                         <h3 class="logo">🔶 Ashutosh Jha</h3>
                         <p>I’m a passionate CSE student focused on building
                             creative projects, exploring cybersecurity, and
-                            continuously improving through hands-on learning.
+                            continuously improving through hands-on
+                            learning.
                         </p>
                         <div class="social-icons">
                             <a
                                 href="https://www.linkedin.com/in/ashutosh-jha-68a525340/"
                                 target="_blank">
-                                <img src="/images/LinkedIn_icon.svg.png"
-                                    id="logos">
+                                <img src="./images/LinkedIn_icon.svg.png" alt="" id="logos">
                             </a>
                             <a href="https://leetcode.com/u/Ashutosh054/"
                                 target="_blank">
-                                <img src="/images/leetcode logo.png" id="logos">
+                                <img src="/images/leetcode logo.png"
+                                    id="logos">
                             </a>
                             <a href="https://github.com/ashutoshJha-2025"
                                 target="_blank">
@@ -434,6 +438,8 @@
                     <!-- Right -->
                     <div class="feedback-box">
                         <h4>Send your feedback or message</h4>
+                        <input type="text" placeholder="Your name..."
+                            id="feedback-name">
                         <textarea id="feedback-text"
                             placeholder="Write your message here..."></textarea>
                         <button type="button"
@@ -446,6 +452,7 @@
         </div>
 
         <script src="script.js"></script>
+        <script src="swiper-bundle.min.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script>

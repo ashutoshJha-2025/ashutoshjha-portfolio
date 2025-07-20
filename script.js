@@ -85,7 +85,6 @@ sections.forEach(section => {
 });
 document.querySelectorAll('.footer-links ul li').forEach(li => {
     li.addEventListener('click', function () {
-        // Assume li text or data attribute matches section id
         const targetId = li.getAttribute('data-target') || li.textContent.trim().toLowerCase();
         const section = document.getElementById(targetId);
         if (section) {
@@ -115,20 +114,21 @@ document.getElementById('quick-email-form').addEventListener('submit', function 
 // --- Feedback Box ---
 document.getElementById('feedback-send-btn').addEventListener('click', function () {
     const feedback = document.getElementById('feedback-text').value;
+    const feedbackName = document.getElementById('feedback-name').value;
     if (!feedback.trim()) {
         alert("Please write your feedback.");
         return;
     }
     emailjs.send("service_8qv6g85", "template_pjy034e", {
         message: feedback,
+        name: feedbackName,
     })
         .then(function () {
             alert("Thank you for your feedback!");
             document.getElementById('feedback-text').value = '';
+            document.getElementById('feedback-name').value = '';
         }, function (error) {
             alert("Failed to send feedback. Please try again.");
         });
 });
-
-
 
