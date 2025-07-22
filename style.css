@@ -286,7 +286,7 @@ main {
 
 .division {
     width: 80px;
-    height: 410px;
+    height: 430px;
     position: absolute;
     left: 50%;
     top: 27%;
@@ -590,10 +590,73 @@ main {
     width: 350px;
     margin: 0px 20px;
     border-radius: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    background-color: transparent;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s ease;
     position: relative;
+}
+
+@property --angle1 {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@property --angle2 {
+    syntax: "<angle>";
+    initial-value: 180deg;
+    inherits: false;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle1), transparent 87%, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    padding: 5px;
+    border-radius: 20px;
+    animation: spin1 5s linear infinite;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle2), transparent 87%, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 5px;
+    border-radius: 20px;
+    animation: spin2 5s linear infinite;
+}
+
+
+@keyframes spin1 {
+    from {
+        --angle1: 0deg;
+    }
+
+    to {
+        --angle1: 360deg;
+    }
+}
+
+@keyframes spin2 {
+    from {
+        --angle2: 180deg;
+    }
+
+    to {
+        --angle2: 540deg;
+    }
 }
 
 
@@ -642,6 +705,7 @@ main {
     position: relative;
     padding-bottom: 45px;
     border-top: 2px solid #e5e5e5;
+    box-shadow: 0 -6px 20px -8px rgba(0,0,0,0.5);
 }
 
 .card_content p {
@@ -655,6 +719,7 @@ main {
     font-weight: 350;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -734,6 +799,7 @@ main {
     margin-bottom: 5px;
     color: #000000;
 }
+
 #exp2 {
     width: 500px;
     height: 120px;
