@@ -137,6 +137,23 @@ document.getElementById('feedback-send-btn').addEventListener('click', function 
         });
 });
 
+const showSocial = (toggleCard, socialCard) => {
+    const toggle = document.getElementById(toggleCard),
+        social = document.getElementById(socialCard)
+
+    toggle.addEventListener('click', () => {
+        if (social.classList.contains('animation')) {
+            social.classList.add('down-animation');
+
+            setTimeout(() => {
+                social.classList.remove('down-animation')
+            }, 1000);
+        }
+
+        social.classList.toggle('animation');
+    })
+}
+showSocial('card-toggle', 'card-social')
 
 
 //  Page 6: Experience
@@ -166,7 +183,7 @@ function clearListeners() {
 }
 
 function loadShow() {
-    clearListeners(); 
+    clearListeners();
     for (let i = 0; i < items.length; i++) {
         items[i].classList.remove('active-item');
         if (i === active) {
@@ -177,9 +194,11 @@ function loadShow() {
             items[i].style.opacity = 1;
             items[i].classList.add('active-item');
 
-            // Add hover listeners only to active item
-            items[i].addEventListener('mouseenter', stopAutoSlide);
-            items[i].addEventListener('mouseleave', startAutoSlide);
+            // Add hover listeners only to active item if screen width > 480px
+            if (window.innerWidth > 480) {
+                items[i].addEventListener('mouseenter', stopAutoSlide);
+                items[i].addEventListener('mouseleave', startAutoSlide);
+            }
 
         } else if (i < active) {
             let stt = active - i;
@@ -214,27 +233,29 @@ startAutoSlide();
 
 
 
-// Touch gesture support for mobile (<=370px)
-// if (window.innerWidth <= 370) {
-//     let startX = 0;
-//     let endX = 0;
-//     slider.addEventListener('touchstart', function (e) {
-//         startX = e.touches[0].clientX;
-//     });
-//     slider.addEventListener('touchmove', function (e) {
-//         endX = e.touches[0].clientX;
-//     });
-//     slider.addEventListener('touchend', function (e) {
-//         if (endX - startX > 40) {
-//             // swipe right, next
-//             active = (active + 1) % items.length;
-//             loadShow();
-//         } else if (startX - endX > 40) {
-//             // swipe left, prev
-//             active = (active - 1 + items.length) % items.length;
-//             loadShow();
-//         }
-//         startX = 0;
-//         endX = 0;
-//     });
-// }
+if (window.innerWidth <= 480) {
+    let startX = 0;
+    let endX = 0;
+    const slider = document.querySelector('.slider');
+    if (slider) {
+        slider.addEventListener('touchstart', function (e) {
+            startX = e.touches[0].clientX;
+        });
+        slider.addEventListener('touchmove', function (e) {
+            endX = e.touches[0].clientX;
+        });
+        slider.addEventListener('touchend', function (e) {
+            if (endX - startX > 40) {
+                // swipe right, next
+                active = (active + 1) % items.length;
+                loadShow();
+            } else if (startX - endX > 40) {
+                // swipe left, prev
+                active = (active - 1 + items.length) % items.length;
+                loadShow();
+            }
+            startX = 0;
+            endX = 0;
+        });
+    }
+}
