@@ -705,7 +705,7 @@ main {
     position: relative;
     padding-bottom: 45px;
     border-top: 2px solid #e5e5e5;
-    box-shadow: 0 -6px 20px -8px rgba(0,0,0,0.5);
+    box-shadow: 0 -6px 20px -8px rgba(0, 0, 0, 0.5);
 }
 
 .card_content p {
@@ -751,7 +751,7 @@ main {
     position: relative;
 }
 
-.experience-page h1 {
+#exp-header {
     position: absolute;
     top: 70px;
     left: 50%;
@@ -760,7 +760,7 @@ main {
     color: #f37329;
 }
 
-.experience-page p {
+#exp-desc {
     width: 90%;
     position: absolute;
     top: 150px;
@@ -773,20 +773,56 @@ main {
     color: #000000;
 }
 
-#exp1 {
-    width: 470px;
-    height: 150px;
-    background-color: #ffffff;
-    position: absolute;
-    top: 43%;
-    left: 2%;
-    border-radius: 12px;
-    box-shadow: 0 1px 20px 0 rgba(17, 17, 17, 0.5);
+.slider {
+    position: relative;
+    top: 39%;
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
 }
 
+.item {
+    position: absolute;
+    width: 470px;
+    height: 200px;
+    text-align: justify;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.5s, border 0.3s;
+    top: 20%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    border: 3px solid transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.item.active-item {
+    border: 2px solid #f37329;
+    animation: border-glow 1.0s linear infinite;
+}
+
+@keyframes border-glow {
+    0% {
+        box-shadow: 0 0 0 0 #f37329;
+    }
+
+    50% {
+        box-shadow: 0 0 10px 4px #f37329;
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 #f37329;
+    }
+}
+
+
 .experience-page h3 {
+    text-align: center;
+    font-size: 24px;
     font-weight: 600;
-    margin: 10px 0px 5px 10px;
+    margin: 0px 0px 0px 20px;
     color: #f37329;
 }
 
@@ -800,50 +836,31 @@ main {
     color: #000000;
 }
 
-#exp2 {
-    width: 500px;
-    height: 120px;
-    background-color: #fff;
+
+#next,
+#prev {
     position: absolute;
-    top: 43%;
-    right: 3%;
-    border-radius: 12px;
-    box-shadow: 0 1px 20px 0 rgba(17, 17, 17, 0.5);
-    z-index: 1;
+    top: 40%;
+    color: #000000;
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+    left: 150px;
+    cursor: pointer;
+    transition: transform 2s ease-in;
 }
 
-#exp3 {
-    width: 450px;
-    height: 120px;
-    background-color: #fff;
-    position: absolute;
-    top: 74%;
-    left: 14%;
-    border-radius: 12px;
-    box-shadow: 0 1px 20px 0 rgba(17, 17, 17, 0.5);
-    z-index: 1;
+#next {
+    left: unset;
+    right: 150px;
 }
 
-#exp4 {
-    width: 450px;
-    height: 135px;
-    background-color: #fff;
-    position: absolute;
-    top: 73%;
-    right: 16%;
-    border-radius: 12px;
-    box-shadow: 0 1px 20px 0 rgba(17, 17, 17, 0.5);
-    z-index: 1;
+#next,
+#prev {
+    transform: scale(0.95);
 }
-
-.exp {
-    transition: transform 0.2s ease-out;
-}
-
-.exp:hover {
-    transform: scale(1.02);
-}
-
 
 .resume {
     height: 100%;
@@ -874,7 +891,7 @@ main {
     font-size: 18px;
     font-weight: 500;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .download-btn:hover {
@@ -1110,7 +1127,6 @@ main {
     font-size: 15px;
     cursor: pointer;
     transition: background 0.3s ease;
-    position: static;
 }
 
 .feedback-box button:hover {
@@ -1123,10 +1139,143 @@ main {
 }
 
 
+/* @media (max-width: 800px) {
+    #home {
+        width: 370px;
+        height: 720px;
+    }
 
-/* --- Media Queries for Responsiveness --- */
+    .image-section,
+    .img-container {
+        width: 370px;
+        height: 250px;
+        margin-top: -50px;
+    }
 
-@media (max-width: 1200px) {
+    .quote-box {
+        display: none;
+    }
+
+    .left-box,
+    .right-box {
+        height: 100px;
+    }
+
+    .division,
+    .s1-span,
+    .s2-span,
+    .s3-span,
+    .s4-span {
+        display: none;
+    }
+
+    .achievements-page {
+        position: relative;
+        width: 370px;
+        height: 720px;
+    }
+
+    .achievements-page h1 {
+        position: absolute;
+        top: 3px;
+        font-size: 40px;
+    }
+
+    .card_container {
+        position: absolute;
+        top: 50px;
+        flex-direction: column;
+        width: 370px;
+        height: 670px;
+        justify-content: space-between;
+        gap: 5px;
+    }
+
+    .card {
+        height: 320px;
+        width: 350px;
+    }
+
+    .card_content {
+        margin-top: -70px;
+        width: 350px;
+        height: 140px;
+    }
+
+    .experience-page {
+        position: relative;
+        width: 370px;
+        height: 400px;
+    }
+
+    #exp-header {
+        position: absolute;
+        top: 3px;
+        font-size: 40px;
+    }
+
+    #exp-desc {
+        display: none;
+    }
+
+    .slider {
+        position: absolute;
+        left: 50%;
+        top: 40px;
+        transform: translateX(-50%);
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .slider .item {
+        left: 50% !important;
+        transform: translate(-50%, 0) !important;
+        margin: 0 auto;
+    }
+
+    .item {
+        width: 95vw;
+        height: 250px;
+    }
+
+    .item.active-item {
+        border: 2px solid #f37329;
+        animation: border-glow 1.0s linear infinite;
+    }
+
+    @keyframes border-glow {
+        0% {
+            box-shadow: 0 0 0 0 #f37329;
+        }
+
+        50% {
+            box-shadow: 0 0 10px 2px #f37329;
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 #f37329;
+        }
+    }
+
+    #next,
+    #prev {
+        display: none;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .resume {
+        width: 100vw;
+        height: 720px;
+    }
+} */
+
+/* @media (max-width: 1200px) {
     .navButtons {
         margin: 25px 8px;
         padding: 5px 8px;
@@ -1320,7 +1469,6 @@ main {
         margin-top: 250px;
     }
 
-    /* Adjust this based on your layout */
     .exp2 {
         margin-top: 20px;
     }
@@ -1367,10 +1515,9 @@ main {
         position: static;
         margin-top: 15px;
     }
-}
+} */
 
-/* For screens smaller than 768px (e.g., tablets in portrait mode) */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     header {
         margin-top: 2vh;
     }
@@ -1392,7 +1539,6 @@ main {
     main {
         height: auto;
         padding-bottom: 20px;
-        /* Add some padding for better spacing */
     }
 
     .hero {
@@ -1424,7 +1570,6 @@ main {
         position: static;
         transform: translateX(0);
         margin: -50px auto 0 auto;
-        /* Adjust margin to overlap with circle */
     }
 
     .left-box,
@@ -1453,7 +1598,6 @@ main {
     .about {
         height: auto;
         padding-bottom: 40px;
-        /* Add padding to the bottom */
     }
 
     .title {
@@ -1500,7 +1644,6 @@ main {
     .abt-footer ul {
         margin: 10px auto;
         text-align: left;
-        /* Keep list items left-aligned */
     }
 
     .skills {
@@ -1518,7 +1661,6 @@ main {
 
     .division {
         display: none;
-        /* Hide the timeline for mobile for simplicity */
     }
 
     .skill1,
@@ -1535,7 +1677,6 @@ main {
     .skills ul {
         margin-left: 0;
         list-style-position: inside;
-        /* Adjust list bullet position */
     }
 
     .s1-span,
@@ -1568,7 +1709,6 @@ main {
         margin-bottom: 30px;
         height: auto;
         padding-bottom: 20px;
-        /* Add padding to the bottom */
     }
 
     #project-title {
@@ -1590,13 +1730,11 @@ main {
         position: static;
         transform: translateX(0);
         object-fit: cover;
-        /* Ensure images cover the area */
     }
 
     .blur1,
     .blur2 {
         display: none;
-        /* Hide blur effects for mobile */
     }
 
     .arrow-box {
@@ -1608,7 +1746,6 @@ main {
         height: auto;
         padding-bottom: 40px;
         display: block;
-        /* Change to block to stack items */
     }
 
     .achievement-bar {
@@ -1737,7 +1874,6 @@ main {
         height: auto;
         padding: 30px 15px;
         border-radius: 0;
-        /* Remove border radius for full width */
     }
 
     .footer-header h2 {
@@ -1760,10 +1896,9 @@ main {
         margin-top: 15px;
         width: 100%;
     }
-}
+} */
 
-/* For screens smaller than 480px (e.g., small smartphones) */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .navButtons {
         font-size: xx-small;
         padding: 5px 5px;
@@ -1775,14 +1910,9 @@ main {
 
     .upper-circle {
         display: none;
-        /* height: 120px;
-        width: 120px;
-        border-top-left-radius: 120px;
-        border-top-right-radius: 120px; */
     }
 
     .img-container img {
-        /* display: none; */
         height: 300px;
         width: 200px;
         margin-top: 30px;
@@ -1901,4 +2031,4 @@ main {
         font-size: 12px;
         padding: 8px 15px;
     }
-}
+} */

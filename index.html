@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Personal Website</title>
         <link rel="stylesheet" href="style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+            rel="stylesheet" />
     </head>
 
     <body>
@@ -292,8 +295,9 @@
         </div>
 
         <div class="experience-page" id="experience">
-            <h1>Experiences</h1>
-            <p>I may not have industry experience yet, but I’ve gained
+            <h1 id="exp-header">Experiences</h1>
+            <p id="exp-desc">I may not have industry experience yet, but I’ve
+                gained
                 hands-on
                 knowledge through building mini projects and solving real
                 problems while learning. These projects helped me understand
@@ -302,53 +306,58 @@
                 to my practical experience and problem-solving skills.
             </p>
 
-            <div class="exp" id="exp1">
-                <h3>DSA Learning Journey</h3>
-                <ul>
-                    <li>Learned Priority Queue via Task Scheduler
-                        project</li>
-                    <li>Used HashMap with custom classes in multiple
-                        apps</li>
-                    <li>Applied logic in Password Manager and Ticket
-                        System</li>
-                    <li>Shifted from just solving problems to building
-                        real-use tools</li>
-                </ul>
-            </div>
+            <div class="slider">
+                <div class="item">
+                    <h3>DSA Learning Journey</h3>
+                    <ul>
+                        <li>Learned Priority Queue via Task Scheduler
+                            project</li>
+                        <li>Used HashMap with custom classes in multiple
+                            apps</li>
+                        <li>Applied logic in Password Manager and Ticket
+                            System</li>
+                        <li>Shifted from just solving problems to building
+                            real-use tools</li>
+                    </ul>
+                </div>
 
-            <div class="exp" id="exp2">
-                <h3> To-Do List App</h3>
-                <ul>
-                    <li> Implemented local storage to persist user data in
-                        the
-                        browser</li>
-                    <li> Ensured that tasks remain saved even after
-                        refreshing
-                        the page</li>
-                    <li>Added functionality for adding and removing tasks
-                        dynamically</li>
-                </ul>
-            </div>
+                <div class="item">
+                    <h3> To-Do List App</h3>
+                    <ul>
+                        <li> Implemented local storage to persist user data in
+                            the
+                            browser</li>
+                        <li> Ensured that tasks remain saved even after
+                            refreshing
+                            the page</li>
+                        <li>Added functionality for adding and removing tasks
+                            dynamically</li>
+                    </ul>
+                </div>
 
-            <div class="exp" id="exp3">
-                <h3>News Website</h3>
-                <ul>
-                    <li>Fetched live news data using API calls</li>
-                    <li>Parsed and displayed data from JSON responses</li>
-                    <li>Categorized news by topics like sports, tech, or
-                        science</li>
-                </ul>
-            </div>
+                <div class="item">
+                    <h3>News Website</h3>
+                    <ul>
+                        <li>Fetched live news data using API calls</li>
+                        <li>Parsed and displayed data from JSON responses</li>
+                        <li>Categorized news by topics like sports, tech, or
+                            science</li>
+                    </ul>
+                </div>
 
-            <div class="exp" id="exp4">
-                <h3>Visual Design</h3>
-                <ul>
-                    <li>positioning</li>
-                    <li>Stroked & Shadows</li>
-                    <li>Padding & Spacing</li>
-                    <li>Developed an eye for clean, minimal design using
-                        PixelLab</li>
-                </ul>
+                <div class="item">
+                    <h3>Visual Design</h3>
+                    <ul>
+                        <li>positioning</li>
+                        <li>Stroked & Shadows</li>
+                        <li>Padding & Spacing</li>
+                        <li>Developed an eye for clean, minimal design using
+                            PixelLab</li>
+                    </ul>
+                </div>
+
+                <button id="next">></button>
+                <button id="prev"><</button>
             </div>
         </div>
 
@@ -380,6 +389,40 @@
                     <button type="submit">Send</button>
                 </form>
             </section>
+
+            <div class="profile-container" style="display: none;">
+                <div class="profile-card">
+                    <div class="card-border">
+                        <img src="./images/Mine image.png" alt="" class="profile-img">
+                    </div>
+
+                    <h3 class="card-name">Ashutosh Jha</h3>
+                    <div class="card_social" id="card-social">
+                        <div class="card_social-control">
+
+                            <div class="card_social-toggle" id="card-toggle">
+                                <i class="ri-add-line"></i>
+                            </div>
+
+                            <span class="card_social-text">My social networks</span>
+
+                            <ul class="card_social-lists">
+                                <a href="https://www.linkedin.com/in/ashutosh-jha-68a525340/" target="_blank"  class="card_social-link">
+                                    <i class="ri-linkedin-line"></i>
+                                </a>
+
+                                <a href="https://github.com/ashutoshJha-2025" target="_blank"  class="card_social-link">
+                                    <i class="ri-github-fill"></i>
+                                </a>
+
+                                <a href="https://leetcode.com/u/Ashutosh054/" target="_blank"  class="card_social-link">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <footer class="footer" id="contact">
                 <div class="footer-header">
